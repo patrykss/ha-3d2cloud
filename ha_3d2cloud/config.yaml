@@ -1,5 +1,5 @@
 name: "HA 3d2cloud"
-version: "1.0.2"
+version: "1.0.6"
 slug: "ha_3d2cloud"
 description: "Bridge for 3D printer timelapses to YouTube and cloud storage while protecting printer memory."
 url: "https://github.com/patrykss/ha-3d2cloud"
@@ -15,6 +15,7 @@ ingress: true
 ingress_port: 8080
 ports:
   8080/tcp: 8080
+panel_icon: mdi:cloud-check-variant
 schema:
   youtube_enabled: "bool"
   youtube_client_id: "str?"
