@@ -2,7 +2,7 @@ name: "HA 3d2cloud"
 version: "1.0.0"
 slug: "ha_3d2cloud"
 description: "Bridge for 3D printer timelapses to YouTube and cloud storage while protecting printer memory."
-url: "https://github.com/yourusername/ha-3d2cloud"
+url: "https://github.com/patrykss/ha-3d2cloud"
 arch:
   - aarch64
   - amd64
