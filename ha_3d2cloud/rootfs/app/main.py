@@ -2,8 +2,9 @@ import os
 import json
 import queue
 import threading
+import uvicorn
 from datetime import datetime
-from fastapi import FastAPI, UploadFile, File, Form, BackgroundTasks
+from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.responses import HTMLResponse
 
 app = FastAPI()
@@ -93,9 +94,12 @@ async def dashboard():
             <h3>Status & Queue</h3>
             <p>Printer Name: <b>{printer}</b></p>
             <p>YouTube Sync: <span class="badge">{yt_status}</span></p>
-            <p>Files currently in queue: <b>{{q_size}}</b></p>
+            <p>Files currently in queue: <b>{q_size}</b></p>
             <p>Title Template: <code>{template}</code></p>
         </div>
     </body>
     </html>
     """
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8080)
