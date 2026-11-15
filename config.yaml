@@ -1,0 +1,48 @@
+name: "HA 3d2cloud"
+version: "1.0.0"
+slug: "ha_3d2cloud"
+description: "Odbieranie timelapsów z drukarek 3D i opcjonalne przesyłanie ich do YouTube."
+url: "https://github.com/patrykss/ha-3d2cloud"
+startup: services
+boot: auto
+init: false
+arch:
+  - amd64
+  - aarch64
+  - armv7
+  - armhf
+  - i386
+ingress: true
+ingress_port: 8080
+ingress_entry: /
+panel_icon: mdi:cloud-check-variant
+panel_title: "HA 3d2cloud"
+panel_admin: false
+ports:
+  8080/tcp: 8080
+ports_description:
+  8080/tcp: "API odbioru plików z drukarki (wymagany dostęp z sieci LAN)"
+options:
+  api_token: ""
+  printer_name: "3D Printer"
+  title_template: "{printer} - {filename} {date}"
+  youtube_enabled: false
+  youtube_access_token: ""
+  youtube_refresh_token: ""
+  youtube_client_id: ""
+  youtube_client_secret: ""
+  youtube_privacy_status: "unlisted"
+  youtube_category_id: "22"
+  max_upload_mb: 4096
+schema:
+  api_token: str
+  printer_name: str
+  title_template: str
+  youtube_enabled: bool
+  youtube_access_token: str
+  youtube_refresh_token: str
+  youtube_client_id: str
+  youtube_client_secret: str
+  youtube_privacy_status: list(private|unlisted|public)
+  youtube_category_id: str
+  max_upload_mb: int(100,8192)
